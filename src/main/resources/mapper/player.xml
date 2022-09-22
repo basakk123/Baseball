@@ -11,8 +11,13 @@
 	</insert>
 
 	<select id="findAll"
-		resultType="site.metacoding.blue.domain.player.Player">
-		SELECT * FROM player ORDER BY id DESC
+		resultType="site.metacoding.blue.web.dto.response.player.ListDto">
+		SELECT rownum no,pn.*
+		FROM (SELECT p.*, t.name teamName
+		FROM player p
+		LEFT OUTER JOIN team t
+		ON p.teamId = t.id
+		ORDER BY p.name) pn
 	</select>
 
 	<select id="findById"

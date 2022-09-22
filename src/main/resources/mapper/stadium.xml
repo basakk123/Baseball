@@ -10,8 +10,9 @@
 	</insert>
 
 	<select id="findAll"
-		resultType="site.metacoding.blue.domain.stadium.Stadium">
-		SELECT * FROM stadium ORDER BY id DESC
+		resultType="site.metacoding.blue.web.dto.response.stadium.ListDto">
+		SELECT rownum no, s.*
+		FROM (SELECT * FROM stadium ORDER BY name) s
 	</select>
 
 	<select id="findById"
