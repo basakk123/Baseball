@@ -8,6 +8,7 @@ import lombok.Setter;
 public class ListDto {
 	
 	private Integer no;
+	private Integer id;
 	private String name;
 
 }

@@ -2,6 +2,10 @@ $("#btnDelete").click(() => {
 	deleteById();
 });
 
+$("#btnSave").click(() => {
+	save();
+});
+
 function deleteById() {
 	let id = $("#id").val();
 	
@@ -22,6 +26,30 @@ function deleteById() {
 			location.href = document.referrer;
 		} else {
 			alert("삭제 실패");
+		}
+	});
+}
+
+function save() {	
+	let data = {
+	name: $("#name").val(),
+	teamId : $("#teamselect option:selected").val(),
+	position :$("#position").val()
+	};
+
+	$.ajax("/player", {
+		type: "POST",
+		dataType: "json",
+		data: JSON.stringify(data), 
+		headers: { 
+			"Content-Type": "application/json; charset=utf-8"
+		}
+	}).done((res) => {
+		if (res.code == 1) {
+			alert("등록되었습니다")
+			location.href = "/player";
+		}else {
+			alert("등록 실패");
 		}
 	});
 }

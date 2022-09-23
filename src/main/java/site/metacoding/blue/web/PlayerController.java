@@ -7,10 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.blue.service.PlayerService;
+import site.metacoding.blue.service.TeamService;
+import site.metacoding.blue.web.dto.request.team.SaveDto;
 import site.metacoding.blue.web.dto.response.CMRespDto;
 import site.metacoding.blue.web.dto.response.player.ListByPositionDto;
 import site.metacoding.blue.web.dto.response.player.ListDto;
@@ -21,6 +25,7 @@ import site.metacoding.blue.web.dto.response.player.ListOutDto;
 public class PlayerController {
 	
 	private final PlayerService playerService;
+	private final TeamService teamService;
 	
 	@GetMapping("/player")
 	public String getAll(Model model) {
@@ -47,5 +52,18 @@ public class PlayerController {
 		List<ListOutDto> playerOutList = playerService.퇴출선수목록보기();
 		model.addAttribute("playerOutList", playerOutList);
 		return "/player/playerOutList";
+	}
+	
+	@GetMapping("/player/playerSaveForm")
+	public String saveForm(Model model) {
+		List<site.metacoding.blue.web.dto.response.team.ListDto> teamList = teamService.팀목록보기();
+		model.addAttribute("teamList", teamList);
+		return "player/playerSaveForm";
+	}
+	
+	@PostMapping("/player")
+	public @ResponseBody CMRespDto<?> registerTeam(@RequestBody site.metacoding.blue.web.dto.request.player.SaveDto saveDto){
+		playerService.등록하기(saveDto);
+		return new CMRespDto<>(1, "등록성공", null);
 	}
 }

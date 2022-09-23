@@ -12,22 +12,9 @@ import site.metacoding.blue.web.dto.response.team.ListDto;
 
 @RequiredArgsConstructor
 @Service
-public class TeamService {
+public class OutService {
 	
 	private final TeamDao teamDao;
 	
-	public List<ListDto> 팀목록보기(){
-		List<ListDto> teamList = teamDao.findAll();
-		return teamList;
-	}
-	
-	public void 팀삭제하기(Integer id) {
-		Team teamPS = teamDao.findById(id);
-		teamDao.deleteById(id);
-	}
-	
-	public void 등록하기(SaveDto saveDto) {		
-		teamDao.insert(saveDto.toEntity());
-	}
-	
+
 }

@@ -5,9 +5,9 @@
 <mapper namespace="site.metacoding.blue.domain.player.PlayerDao">
 
 	<insert id="insert">
-		INSERT INTO player(name, teamId, position,
+		INSERT INTO player(id, name, teamId, position,
 		createdAt)
-		VALUES(#{name}, #{teamId}, #{position}, sysdate)
+		VALUES(player_seq.nextval, #{name}, #{teamId}, #{position}, sysdate)
 	</insert>
 
 	<select id="findAll"

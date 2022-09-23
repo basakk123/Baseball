@@ -6,7 +6,12 @@
 <br/><br/>
 <div class="container">
 	<br />
-
+	<div class="d-flex justify-content-around">
+	<button id="btnDoosan"  type="button">두산</button>
+	<button id="btnNC"  type="button">NC</button>
+	<button id="btnLotte"  type="button">롯데</button>
+	</div>
+	<br />
 	<table class="table table-striped">
 		<thead>
 			<tr>

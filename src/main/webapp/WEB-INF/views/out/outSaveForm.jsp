@@ -3,7 +3,7 @@
 <%@ include file="../layout/header.jsp"%>
 <br />
 <br />
-<h2 style="text-align: center">선수 등록</h2>
+<h2 style="text-align: center">퇴출 사유 등록</h2>
 <br />
 <br />
 <div class="container">
@@ -11,20 +11,16 @@
 		<div class="mb-3 mt-3">
 			<div class="d-flex justify-content-center">
 				<div style="width: 300px">
-					<h5>팀 이름 :</h5>
-					<select class="form-control" id="teamselect" name="teamselect" required>
-						<c:forEach var="teamList" items="${teamList}">
-							<option value="${teamList.id}">${teamList.name}</option>
+					<h5>선수 이름 :</h5>
+					<select class="form-control" id="stadiumselect" name="stadiumselect" required>
+						<c:forEach var="stadiumList" items="${stadiumList}">
+							<option value="${stadiumList.id}">${stadiumList.name}</option>
 						</c:forEach>
 					</select>
 				</div>
 				<div style="width: 300px">
-					<h5>선수 이름 :</h5>
+					<h5>퇴출 사유 :</h5>
 					<input id="name" type="text" class="form-control" placeholder="Enter name">
-				</div>
-				<div style="width: 300px">
-					<h5>포지션 이름 :</h5>
-					<input id="position" type="text" class="form-control" placeholder="Enter position">
 				</div>
 			</div>
 			<br /> <br />
@@ -35,6 +31,6 @@
 	</form>
 </div>
 
-<script src="/js/player.js"></script>
+<script src="/js/out.js"></script>
 
 <%@ include file="../layout/footer.jsp"%>

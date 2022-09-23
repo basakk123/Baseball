@@ -13,7 +13,7 @@
 
 				<div style="width: 300px">
 					<h5>야구장 이름 :</h5>
-					<input id="name" type="text" class="form-control" placeholder="Enter the name">
+					<input id="name" type="text" class="form-control" placeholder="Enter name">
 				</div>
 			</div>
 			<br /> <br />

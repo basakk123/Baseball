@@ -30,11 +30,11 @@
 							<li class="nav-item"><a class="nav-link" href="/team">팀목록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/player">선수목록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/stadium/stadiumSaveForm">야구장등록</a></li>
-							<li class="nav-item"><a class="nav-link" href="/logout">팀등록</a></li>
-							<li class="nav-item"><a class="nav-link" href="/logout">선수등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/team/teamSaveForm">팀등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/player/playerSaveForm">선수등록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/playerposition">팀별포지션목록</a></li>
-							<li class="nav-item"><a class="nav-link" href="/playerout">퇴출선수목록</a></li>
-							<li class="nav-item"><a class="nav-link" href="/player">퇴출사유등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/out">퇴출선수목록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/out/outSaveFrom">퇴출사유등록</a></li>
 
 				</ul>
 			</div>

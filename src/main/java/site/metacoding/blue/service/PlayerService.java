@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.blue.domain.player.Player;
 import site.metacoding.blue.domain.player.PlayerDao;
+import site.metacoding.blue.web.dto.request.player.SaveDto;
 import site.metacoding.blue.web.dto.response.player.ListByPositionDto;
 import site.metacoding.blue.web.dto.response.player.ListDto;
 import site.metacoding.blue.web.dto.response.player.ListOutDto;
@@ -35,5 +36,9 @@ public class PlayerService {
 	public List<ListOutDto> 퇴출선수목록보기(){
 		List<ListOutDto> playerOutList = playerDao.findByOut();
 		return playerOutList;
+	}
+	
+	public void 등록하기(SaveDto saveDto) {
+		playerDao.insert(saveDto.toEntity());
 	}
 }

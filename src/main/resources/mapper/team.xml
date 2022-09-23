@@ -5,8 +5,8 @@
 <mapper namespace="site.metacoding.blue.domain.team.TeamDao">
 
 	<insert id="insert">
-		INSERT INTO team(name, stadiumId, createdAt)
-		VALUES(#{name}, #{stadiumId}, sysdate)
+		INSERT INTO team(id,name, stadiumId, createdAt)
+		VALUES(team_seq.nextval, #{name}, #{stadiumId}, sysdate)
 	</insert>
 
 	<select id="findAll"

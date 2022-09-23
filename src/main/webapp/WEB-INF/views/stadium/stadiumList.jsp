@@ -26,8 +26,8 @@
 				<tr>
 					<td>${stadiumList.no}</td>
 					<td>${stadiumList.name}</td>
-					<td><input id="id" type="hidden" value="${stadiumList.no}" />
-					<input  id="check${stadiumList.no}" type="checkbox" name="check"></td>
+					<td><input id="id" type="hidden" value="${stadiumList.id}" />
+					<input  id="check${stadiumList.id}" type="checkbox" name="check"></td>
 				</tr>
 			</c:forEach>
 		</tbody>
