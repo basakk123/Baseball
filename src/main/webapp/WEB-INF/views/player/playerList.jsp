@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="../layout/header.jsp"%>
-
+<br/><br/>
+<h2 style="text-align:center">선수 목록</h2>
+<br/><br/>
 <div class="container">
 	<br />
 	<div class="d-flex justify-content-end">

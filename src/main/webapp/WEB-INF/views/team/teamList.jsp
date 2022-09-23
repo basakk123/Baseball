@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="../layout/header.jsp"%>
-
+<br/><br/>
+<h2 style="text-align:center">팀 목록</h2>
+<br/><br/>
 <div class="container">
 	<br />
 	<div class="d-flex justify-content-end">
@@ -16,7 +18,7 @@
 			<tr>
 				<th>번호</th>
 				<th>이름</th>
-				<th>경기장이름</th>
+				<th>야구장이름</th>
 				<th>삭제</th> 
 			</tr>
 		</thead>

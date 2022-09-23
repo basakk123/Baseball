@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.blue.domain.stadium.Stadium;
 import site.metacoding.blue.domain.stadium.StadiumDao;
+import site.metacoding.blue.web.dto.request.stadium.SaveDto;
 import site.metacoding.blue.web.dto.response.stadium.ListDto;
 
 @RequiredArgsConstructor
@@ -23,6 +24,10 @@ public class StadiumService {
 	public void 야구장삭제하기(Integer id) {
 		Stadium stadiumPS = stadiumDao.findById(id);
 		stadiumDao.deleteById(id);
+	}
+	
+	public void 등록하기(SaveDto saveDto) {
+		stadiumDao.insert(saveDto.toEntity());
 	}
 
 }
