@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.blue.service.PlayerService;
 import site.metacoding.blue.service.TeamService;
-import site.metacoding.blue.web.dto.request.team.SaveDto;
 import site.metacoding.blue.web.dto.response.CMRespDto;
 import site.metacoding.blue.web.dto.response.player.ListByPositionDto;
 import site.metacoding.blue.web.dto.response.player.ListDto;
-import site.metacoding.blue.web.dto.response.player.ListOutDto;
 
 @RequiredArgsConstructor
 @Controller
@@ -45,13 +43,6 @@ public class PlayerController {
 		List<ListByPositionDto> playerListByPostion = playerService.포지션별선수목록보기();
 		model.addAttribute("playerListByPostion", playerListByPostion);
 		return "/player/playerListByPosition";
-	}
-	
-	@GetMapping("/playerout")
-	public String getOutList(Model model) {
-		List<ListOutDto> playerOutList = playerService.퇴출선수목록보기();
-		model.addAttribute("playerOutList", playerOutList);
-		return "/player/playerOutList";
 	}
 	
 	@GetMapping("/player/playerSaveForm")

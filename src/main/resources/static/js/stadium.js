@@ -15,6 +15,7 @@ function deleteById() {
 	 }
 	
 	if(!$("#check"+id).is(":checked")){
+		console.log(id);
 		return;
 	}
 			

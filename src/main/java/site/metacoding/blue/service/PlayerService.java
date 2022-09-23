@@ -10,7 +10,7 @@ import site.metacoding.blue.domain.player.PlayerDao;
 import site.metacoding.blue.web.dto.request.player.SaveDto;
 import site.metacoding.blue.web.dto.response.player.ListByPositionDto;
 import site.metacoding.blue.web.dto.response.player.ListDto;
-import site.metacoding.blue.web.dto.response.player.ListOutDto;
+
 
 @RequiredArgsConstructor
 @Service
@@ -31,11 +31,6 @@ public class PlayerService {
 	public List<ListByPositionDto> 포지션별선수목록보기(){
 		List<ListByPositionDto> playerListByPostion = playerDao.findByPostion();
 		return playerListByPostion;
-	}
-	
-	public List<ListOutDto> 퇴출선수목록보기(){
-		List<ListOutDto> playerOutList = playerDao.findByOut();
-		return playerOutList;
 	}
 	
 	public void 등록하기(SaveDto saveDto) {

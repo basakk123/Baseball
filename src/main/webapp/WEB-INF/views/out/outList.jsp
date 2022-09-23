@@ -7,9 +7,9 @@
 <div class="container">
 	<br />
 	<div class="d-flex justify-content-around">
-	<button id="btnDoosan"  type="button">두산</button>
-	<button id="btnNC"  type="button">NC</button>
-	<button id="btnLotte"  type="button">롯데</button>
+	<c:forEach var="outList" items="${outList}">
+	<button id="btnTeam"  type="button" value="${outList.id}">${outList.teamName}</button>
+	</c:forEach>
 	</div>
 	<br />
 	<table class="table table-striped">
@@ -24,22 +24,20 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="playerOutList" items="${playerOutList}">
+			<c:forEach var="outList" items="${outList}">
 				<tr>
-					<td>${playerOutList.no}</td>
-					<td>${playerOutList.doosan}</td>
-					<td>${playerOutList.nc}</td>
-					<td>${playerOutList.lotte}</td>
-					<td>${playerOutList.name}</td>
-					<td>${playerOutList.position}</td>
-					<td>${playerOutList.reason}</td>
-					<td>${playerOutList.createdAt}</td>
+					<td>${outList.no}</td>
+					<td>${outList.teamName}</td>
+					<td>${outList.name}</td>
+					<td>${outList.position}</td>
+					<td>${outList.reason}</td>
+					<td>${outList.createdAt}</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 </div>
 
-<script src="/js/player.js"></script>
+<script src="/js/out.js"></script>
 
 <%@ include file="../layout/footer.jsp"%>

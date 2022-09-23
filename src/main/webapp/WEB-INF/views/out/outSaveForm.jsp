@@ -12,15 +12,15 @@
 			<div class="d-flex justify-content-center">
 				<div style="width: 300px">
 					<h5>선수 이름 :</h5>
-					<select class="form-control" id="stadiumselect" name="stadiumselect" required>
-						<c:forEach var="stadiumList" items="${stadiumList}">
-							<option value="${stadiumList.id}">${stadiumList.name}</option>
+					<select class="form-control" id="select" name="select" required>
+						<c:forEach var="outList" items="${outList}">
+							<option value="${outList.id}">${outList.name}</option>
 						</c:forEach>
 					</select>
 				</div>
 				<div style="width: 300px">
 					<h5>퇴출 사유 :</h5>
-					<input id="name" type="text" class="form-control" placeholder="Enter name">
+					<input id="reason" type="text" class="form-control" placeholder="Enter reason">
 				</div>
 			</div>
 			<br /> <br />

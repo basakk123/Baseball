@@ -32,20 +32,6 @@
 		GROUP BY position
 	</select>
 
-	<select id="findByOut"
-		resultType="site.metacoding.blue.web.dto.response.player.ListOutDto">
-		SELECT rownum no, po.*
-		FROM
-		(SELECT p.id, p.name, p.position,
-		decode(teamId,'1', '두산', ' ') doosan,
-		decode(teamId,'2', 'NC', ' ') nc,
-		decode(teamId,'3', '롯데', ' ') lotte,
-		p.teamId, o.reason, o.createdAt
-		FROM player p
-		LEFT OUTER JOIN out o
-		ON p.id=o.playerId) po
-	</select>
-
 	<select id="findById"
 		resultType="site.metacoding.blue.domain.player.Player">
 		SELECT * FROM player WHERE id = #{id}

@@ -10,13 +10,12 @@ import site.metacoding.blue.domain.player.Player;
 @NoArgsConstructor
 @Setter
 @Getter
-public class SaveDto {
+public class UpdateDto {
 	
-	private Integer playerId;
 	private String reason;
 
 	public Out toEntity() {
-		Out out = new Out(this.playerId, this.reason);
+		Out out = new Out(this.reason);
 		return out;
 	}
 }

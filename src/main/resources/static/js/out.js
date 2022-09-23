@@ -1,16 +1,22 @@
 $("#btnSave").click(() => {
-	save();
+	updateReason();
 });
 
-function save() {	
-	let data = {
-	name: $("#name").val(),
-	teamId : $("#teamselect option:selected").val(),
-	position :$("#position").val()
-	};
+$("#btnTeam").click(() => {
+	changeTeam();
+});
 
-	$.ajax("/out", {
-		type: "POST",
+function updateReason() {	
+	let id = $("#select option:selected").val();
+	
+	console.log(id);
+	
+	let data = {
+	reason: $("#reason").val()
+	};
+	
+	$.ajax("/out/"+id, {
+		type: "PUT",
 		dataType: "json",
 		data: JSON.stringify(data), 
 		headers: { 
@@ -24,4 +30,8 @@ function save() {
 			alert("등록 실패");
 		}
 	});
+}
+
+function changeTeam(){
+	
 }

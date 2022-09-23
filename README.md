@@ -34,14 +34,14 @@ CREATE SEQUENCE player_seq
 INCREMENT BY 1 
 START WITH 1;
 
-CREATE TABLE expulsion(
+CREATE TABLE out(
 	id number primary key,
     playerId number,
-    reason varchar2(100) unique not null,
+    reason varchar2(100),
     createdAt TIMESTAMP
-) ;
+);   
 
-CREATE SEQUENCE expulsion_seq 
+CREATE SEQUENCE out_seq 
 INCREMENT BY 1 
 START WITH 1;
 

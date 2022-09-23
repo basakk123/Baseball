@@ -34,7 +34,7 @@
 							<li class="nav-item"><a class="nav-link" href="/player/playerSaveForm">선수등록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/playerposition">팀별포지션목록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/out">퇴출선수목록</a></li>
-							<li class="nav-item"><a class="nav-link" href="/out/outSaveFrom">퇴출사유등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/out/outSaveForm">퇴출사유등록</a></li>
 
 				</ul>
 			</div>
