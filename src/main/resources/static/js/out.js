@@ -2,10 +2,6 @@ $("#btnSave").click(() => {
 	updateReason();
 });
 
-$("#btnTeam").click(() => {
-	changeTeam();
-});
-
 function updateReason() {	
 	let id = $("#select option:selected").val();
 	
@@ -30,8 +26,4 @@ function updateReason() {
 			alert("등록 실패");
 		}
 	});
-}
-
-function changeTeam(){
-	
 }

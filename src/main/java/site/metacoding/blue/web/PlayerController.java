@@ -3,6 +3,7 @@ package site.metacoding.blue.web;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.blue.service.OutService;
 import site.metacoding.blue.service.PlayerService;
 import site.metacoding.blue.service.TeamService;
 import site.metacoding.blue.web.dto.response.CMRespDto;
@@ -34,9 +36,15 @@ public class PlayerController {
 	
 	@DeleteMapping("/player/{id}")
 	public @ResponseBody CMRespDto<?> deletePlayer(@PathVariable Integer id){
-		playerService.선수삭제하기(id);
+		playerService.삭제퇴출등록하기(id);
 		return new CMRespDto<>(1, "선수삭제성공", null);
 	}
+//	
+//	@PostMapping("/player/{id}")
+//	public @ResponseBody CMRespDto<?> outPlayer(@PathVariable Integer id){
+//		playerService.삭제퇴출등록하기(id);
+//		return new CMRespDto<>(1, "선수퇴출등록성공", null);
+//	}
 	
 	@GetMapping("/playerposition")
 	public String getPositionList(Model model) {

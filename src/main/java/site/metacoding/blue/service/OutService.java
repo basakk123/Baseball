@@ -32,4 +32,9 @@ public class OutService {
 		outDao.update(outPS);
 	}
 	
+	public void 선수아이디로등록하기(Integer playerId) {
+		Out outPS = new Out(playerId);
+		outDao.insert(outPS);
+	}
+	
 }

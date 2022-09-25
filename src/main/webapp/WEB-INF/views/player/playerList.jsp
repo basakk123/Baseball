@@ -30,8 +30,9 @@
 					<td>${playerList.name}</td>
 					<td>${playerList.teamName}</td>
 					<td>${playerList.position}</td>
-					<td><input id="id" type="hidden" value="${playerList.no}" />
-					<input  id="check${playerList.no}" type="checkbox" name="check"></td>
+					<td>
+					<input type="checkbox" name="check" value="${playerList.id}">
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>

@@ -48,12 +48,12 @@ START WITH 1;
 DROP table stadium;
 DROP table team;
 DROP table player;
-DROP table expulsion;
+DROP table out;
 
 DROP SEQUENCE stadium_seq;
 DROP SEQUENCE team_seq;
 DROP SEQUENCE player_seq;
-DROP SEQUENCE expulsion_seq;
+DROP SEQUENCE out_seq;
 ```
 
 ### 더미데이터 추가

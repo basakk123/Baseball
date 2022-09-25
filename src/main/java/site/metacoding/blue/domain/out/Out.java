@@ -20,6 +20,10 @@ public class Out {
 		this.reason = reason;
 	}
 	
+	public Out(Integer playerId) {
+		this.playerId = playerId;
+	}
+	
 	public Out(Integer playerId, String reason) {
 		this.playerId = playerId;
 		this.reason = reason;
