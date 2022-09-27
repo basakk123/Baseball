@@ -9,29 +9,32 @@ $("#btnSave").click(() => {
 
 function deleteById() {
 	let length = $("input[type=checkbox][name='check']:checked").length;
-	let id = $("input[type=checkbox][name='check']:checked").val();
-	
-	if(length == 0){
+	let idArr = [];
+
+	if (length == 0) {
 		alert("삭제할 항목을 선택해주세요");
 		return;
 	}
-	
-	if(length > 1){
-		alert("하나의 항목만 선택해주세요");
-		return;
-	}
 
-	$.ajax("/stadium/" + id, {
-		type: "DELETE",
-		dataType: "json"
-	}).done((res) => {
-		if (res.code == 1) {
-			alert("삭제되었습니다")
-			location.href = "/";
-		} else {
-			alert("삭제 실패");
-		}
-	});
+	$("input[type=checkbox][name='check']:checked").each(function() {
+		idArr.push($(this).val());
+	})
+
+	for (let i = 0; i < idArr.length; i++) {
+		let id = idArr[i];
+
+		$.ajax("/stadium/" + id, {
+			type: "DELETE",
+			dataType: "json"
+		}).done((res) => {
+			if (res.code == 1) {
+				location.href = "/";
+			} else {
+				alert("삭제 실패");
+			}
+		});
+	}
+	alert("삭제되었습니다");
 }
 
 function save() {
