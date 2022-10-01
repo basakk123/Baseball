@@ -11,12 +11,10 @@ public class ListDto {
 	
 	private Integer no;
 	private Integer id;
-	private Integer playerId;
 	private String name;
-	private String reason;
 	private String teamId;
 	private String position;
-	private String teamName;
+	private String reason;
 	private Timestamp createdAt;
-
+	private String teamName;
 }

@@ -29,9 +29,9 @@ public class PlayerService {
 	
 	@Transactional
 	public void 삭제퇴출등록하기(Integer id) {
-		Out outPS = new Out(id);
-		outDao.insert(outPS);
 		Player playerPS = playerDao.findById(id);
+		Out outPS = new Out(playerPS.getName(), playerPS.getTeamId(), playerPS.getPosition());
+		outDao.insert(outPS);	
 		playerDao.deleteById(id);			
 	}
 

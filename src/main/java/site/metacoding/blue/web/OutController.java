@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.blue.service.OutService;
-import site.metacoding.blue.web.dto.request.out.SaveDto;
 import site.metacoding.blue.web.dto.request.out.UpdateDto;
 import site.metacoding.blue.web.dto.response.CMRespDto;
 import site.metacoding.blue.web.dto.response.out.ListDto;
@@ -37,12 +36,6 @@ public class OutController {
 		List<ListDto> outList = outService.퇴출선수목록보기();
 		model.addAttribute("outList",outList);
 		return "out/outSaveForm";
-	}
-	
-	@PostMapping("/out")
-	public @ResponseBody CMRespDto<?> registerReason(@RequestBody SaveDto saveDto){
-		outService.등록하기(saveDto);
-		return new CMRespDto<>(1, "등록성공", null);
 	}
 	
 	@PutMapping("/out/{id}")

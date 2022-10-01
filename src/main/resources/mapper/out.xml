@@ -5,22 +5,21 @@
 <mapper namespace="site.metacoding.blue.domain.out.OutDao">
 
 	<insert id="insert">
-		INSERT INTO out(id, playerId, reason, createdAt)
-		VALUES(stadium_seq.nextval, #{playerId}, #{reason}, sysdate)
+		INSERT INTO out(id, name, teamId, position, reason,
+		createdAt)
+		VALUES(stadium_seq.nextval, #{name}, #{teamId}, #{position},
+		#{reason}, sysdate)
 	</insert>
 
 	<select id="findAll"
 		resultType="site.metacoding.blue.web.dto.response.out.ListDto">
-		SELECT rownum no, o.*
-		FROM (SELECT o.id, o.playerId, reason,
-		o.createdAt, p.name, p.teamId,
-		p.position, t.name teamName
+		SELECT rownum no, ol.*
+		FROM (SELECT o.id, o.name, o.teamId, o.position, o.reason,
+		o.createdAt, t.name teamName
 		FROM out o
-		INNER JOIN player p
-		ON o.playerId=p.id
 		INNER JOIN team t
-		ON p.teamId=t.id
-		ORDER BY p.name) o
+		ON o.teamId=t.id
+		ORDER BY name) ol
 	</select>
 
 	<select id="findById"

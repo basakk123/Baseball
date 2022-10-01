@@ -12,24 +12,25 @@ import site.metacoding.blue.web.dto.request.out.UpdateDto;
 @Getter
 public class Out {
 	private Integer id;
-	private Integer playerId;
+	private String name;
+	private Integer teamId;
+	private String position;
 	private String reason;
 	private Timestamp createdAt;
-	
+
 	public Out(String reason) {
 		this.reason = reason;
 	}
-	
-	public Out(Integer playerId) {
-		this.playerId = playerId;
-	}
-	
-	public Out(Integer playerId, String reason) {
-		this.playerId = playerId;
-		this.reason = reason;
+		
+	public Out(String name, Integer teamId, String position) {
+		this.name = name;
+		this.teamId = teamId;
+		this.position = position;
+		this.reason = "";
 	}
 	
 	public void update(UpdateDto updateDto) {
 		this.reason = updateDto.getReason();
 	}
+	
 }

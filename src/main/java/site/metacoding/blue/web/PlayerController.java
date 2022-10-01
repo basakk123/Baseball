@@ -34,17 +34,11 @@ public class PlayerController {
 		return "/player/playerList";
 	}
 	
-	@DeleteMapping("/player/{id}")
-	public @ResponseBody CMRespDto<?> deletePlayer(@PathVariable Integer id){
+	@PostMapping("/player/{id}")
+	public @ResponseBody CMRespDto<?> outPlayer(@PathVariable Integer id){
 		playerService.삭제퇴출등록하기(id);
-		return new CMRespDto<>(1, "선수삭제성공", null);
+		return new CMRespDto<>(1, "선수퇴출등록성공", null);
 	}
-//	
-//	@PostMapping("/player/{id}")
-//	public @ResponseBody CMRespDto<?> outPlayer(@PathVariable Integer id){
-//		playerService.삭제퇴출등록하기(id);
-//		return new CMRespDto<>(1, "선수퇴출등록성공", null);
-//	}
 	
 	@GetMapping("/playerposition")
 	public String getPositionList(Model model) {

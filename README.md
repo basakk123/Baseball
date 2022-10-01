@@ -36,7 +36,9 @@ START WITH 1;
 
 CREATE TABLE out(
 	id number primary key,
-    playerId number,
+    name varchar2(100) not null,
+    teamId number,
+    position varchar2(100),
     reason varchar2(100),
     createdAt TIMESTAMP
 );   
